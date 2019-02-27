@@ -28,5 +28,6 @@ context('Location', () => {
   it('cy.url() - get the current URL', () => {
     // https://on.cypress.io/url
     cy.url().should('eq', 'https://example.cypress.io/commands/location')
+    console.log('测试', cy.url())
   })
 })
