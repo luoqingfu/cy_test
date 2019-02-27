@@ -25,6 +25,7 @@ context('测试腾讯云首页登录功能', () => {
     //   $url.should('eq', 'http://www.eliteu.xyz/')
     // }
     // )
+    
     cy.url()
       .should('eq', 'http://www.eliteu.xyz/')
     cy.log('登录成功')
