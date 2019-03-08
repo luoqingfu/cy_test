@@ -1,10 +1,10 @@
 var test_ele = {
-  "base_url": "http://www.eliteu.xyz/",
+  
   "登录页": "/login?next=%2F",
   "账号输入框": "#login-email",
   "账号": "746832476@qq.com",
   "密码输入框": "#login-password",
-  "密码": "******",
+  "密码": "123456",
   "登录按钮": "#login > button",
 }
 
