@@ -1,5 +1,5 @@
 var test_ele = {
-  "base_url": "http://www.eliteu.xyz/",
+  
   "登录页": "/login?next=%2F",
   "账号输入框": "#login-email",
   "账号": "746832476@qq.com",
@@ -25,7 +25,6 @@ context('测试腾讯云首页登录功能', () => {
     //   $url.should('eq', 'http://www.eliteu.xyz/')
     // }
     // )
-    
     cy.url()
       .should('eq', 'http://www.eliteu.xyz/')
     cy.log('登录成功')

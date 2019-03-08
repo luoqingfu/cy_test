@@ -16,7 +16,8 @@ context('Cookies', () => {
     cy.get('#getCookie .set-a-cookie').click()
 
     // cy.getCookie() yields a cookie object
-    cy.getCookie('token').should('have.property', 'value', '123ABC')
+    var c = cy.getCookie('token').should('have.property', 'value', '123ABC')
+    //cy.log('测试', c)
   })
 
   it('cy.getCookies() - get browser cookies', () => {
