@@ -1,5 +1,5 @@
 var test_ele = {
-  "base_url": "http://www.eliteu.xyz/",
+  
   "登录页": "/login?next=%2F",
   "账号输入框": "#login-email",
   "账号": "746832476@qq.com",
