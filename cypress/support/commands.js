@@ -47,7 +47,7 @@ Cypress.Commands.add('login', () =>{
     "账号输入框": "#login-email",
     "账号": "746832476@qq.com",
     "密码输入框": "#login-password",
-    "密码": "123456",
+    "密码": "******",
     "登录按钮": "#login > button",
   }
   cy.visit(test_ele.登录页)
