@@ -18,7 +18,7 @@ context('获取浏览器cookies', () => {
     cy.visit(test_ele.登录页)
     //cy.clearCookies()
   })
-  it('get_cookies', () => {
+  it.skip('get_cookies', () => {
     cy.get(test_ele.账号输入框)
       .type(test_ele.账号).should('have.value', test_ele.账号)
     cy.get(test_ele.密码输入框)
