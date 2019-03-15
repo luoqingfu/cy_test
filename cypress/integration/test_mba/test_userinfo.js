@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 var test_ele = {
-  '选择': 'body > div.window-wrap > header > div.main-header > div.nav-links > div.secondary > div.nav-item.hidden-mobile.nav-item-dropdown > div.toggle-user-dropdown > span',
+  '选择': 'body > div.window-wrap > header > div.main-header > nav > div.secondary.login > div.nav-item.hidden-mobile.nav-item-dropdown > div.toggle-user-dropdown > span',
   '用户资料': '#user-menu > div:nth-child(2) > a',
   '选择年份': '#u-field-select-year_of_birth', 
   '账号设置页面': '#u-field-message-account_privacy > span.u-field-message-notification > a',
@@ -66,7 +66,10 @@ context('测试用户资料', () => {
       .get(test_ele.用户资料)
       .click()
     //未能解决图片上传问题，
-    cy.upload_file('images/xiao.jpeg', test_ele.头像上传)
+    var fileName = 'images/xiao.jpeg'
+    var fileType = 'png/jpeg'
+    var fileInput = test_ele.头像上传
+    cy.upload_file(fileName, fileType, fileInput);
     })
 
 })

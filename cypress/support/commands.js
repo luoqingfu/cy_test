@@ -23,20 +23,17 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
-Cypress.Commands.add('upload_file', (fileName, selector) => {
-  return cy.get(selector).then(subject => {
-      return cy.fixture(fileName, 'base64')
+Cypress.Commands.add('upload_file', (fileName, fileType = ' ', selector) => {
+  cy.get(selector).then(subject => {
+    cy.fixture(fileName, 'base64')
       .then(Cypress.Blob.base64StringToBlob)
       .then(blob => {
-          const el = subject[0]
-          const testFile = new File([blob], fileName, { type: '' })
-          const dataTransfer = new DataTransfer()
-          dataTransfer.items.add(testFile)
-          el.files = dataTransfer.files
-          return subject;
-      
+        const el = subject[0]
+        const testFile = new File([blob], fileName, { type: fileType })
+        const dataTransfer = new DataTransfer()
+        dataTransfer.items.add(testFile)
+        el.files = dataTransfer.files
       })
-      .type('{enter}')
   })
 })
 //加入登录commands
@@ -47,7 +44,7 @@ Cypress.Commands.add('login', () =>{
     "账号输入框": "#login-email",
     "账号": "746832476@qq.com",
     "密码输入框": "#login-password",
-    "密码": "123456",
+    "密码": "******",
     "登录按钮": "#login > button",
   }
   cy.visit(test_ele.登录页)
